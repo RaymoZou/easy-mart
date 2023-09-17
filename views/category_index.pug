@@ -3,3 +3,5 @@ extends layout
 block content   
     h1=title
     p This is the categories page.
+    for category in category_list
+        p=category.name

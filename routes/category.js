@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+// controllers
+const category_controller = require("../controllers/categoryController");
+
 /* GET categories */
-router.get('/', (req, res) => {
-    res.render('category_index', { title: 'Categories' });
-})
+router.get('/', category_controller.index);
 
 module.exports = router;

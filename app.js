@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -28,6 +30,16 @@ app.use('/category', categoryRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+// set up mongoose connection
+const mongoose = require('mongoose');
+// mongoose.set("strictQuery", false);
+
+async function main() {
+  await mongoose.connect(process.env.MONGODB_URI);
+}
+
+main();
 
 // error handler
 app.use(function(err, req, res, next) {
