@@ -25,10 +25,10 @@ async function categoryCreate(name) {
 
 async function createCategory() {
     await Promise.all([
-        categoryCreate('Pants'),
-        categoryCreate('Hats'),
-        categoryCreate('Shirts'),
-        categoryCreate('Shoes')
+        categoryCreate('Snacks'),
+        categoryCreate('Apparel'),
+        categoryCreate('Beverages'),
+        categoryCreate('Toys')
     ])
     console.log("Finish adding categories");
 }

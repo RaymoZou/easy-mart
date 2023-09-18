@@ -11,3 +11,8 @@ exports.index = asyncHandler(async (req, res, next) => {
         category_list: categories
     })
 })
+
+exports.category_list = asyncHandler(async (req, res, next) => {
+    const category = await Category.findById(req.params.id);
+    res.send(category.name);
+})

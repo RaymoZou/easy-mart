@@ -2,6 +2,7 @@ extends layout
 
 block content   
     h1=title
-    p This is the categories page.
+    p(class="font-bold") This is the categories page.
     for category in category_list
-        p=category.name
+        li
+            a(href=category.url) #{category.name}

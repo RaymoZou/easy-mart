@@ -1,11 +1,18 @@
 const mongoose = require('mongoose');
 
-const CategorySchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const categorySchema = Schema({
     name: {
         type: String,
-        minLength: 3
+        minLength: 3,
+        enum: ["Snacks", "Apparel", "Beverages", "Toys"]
     }
 })
 
-const Category = mongoose.model('Category', CategorySchema)
+categorySchema.virtual('url').get(function() {
+    return `/category/${this._id}`
+})
+
+const Category = mongoose.model('Category', categorySchema)
 module.exports = Category;
