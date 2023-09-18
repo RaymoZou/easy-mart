@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
-const Category = require('category');
+const Category = require('./category');
 
 const Schema = mongoose.Schema;
 
-const categorySchema = Schema({
-    name: { type: String, minLength: 3 },
-    price: { type: Number },
-    description: { type: String },
-    category: { type: Category }
+const itemSchema = Schema({
+    name: { type: String, minLength: 3, required: true },
+    price: { type: Number, required: true },
+    description: { type: String, required: true },
+    category: { type: Schema.ObjectId, ref: "Category", required: true }
 })
 
-categorySchema.virtual('url').get(function () {
-    return `/category/${this._id}`
+itemSchema.virtual('url').get(function () {
+    return `/category/item/${this._id}`
 })
 
-const Item = mongoose.model('Category', categorySchema)
+const Item = mongoose.model('Item', itemSchema)
 module.exports = Item;
