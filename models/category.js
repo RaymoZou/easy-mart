@@ -6,7 +6,8 @@ const categorySchema = Schema({
     name: {
         type: String,
         minLength: 3,
-        enum: ["Snacks", "Apparel", "Beverages", "Toys"]
+        enum: ["Snacks", "Apparel", "Beverages", "Toys"],
+        unique: true
     }
 })
 

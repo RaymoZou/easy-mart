@@ -37,7 +37,8 @@ async function clear_collections() {
 async function createItems() {
     await Promise.all([
         itemCreate('Hat', 3.99, 'No cap', categories[0]),
-        itemCreate('Boca Bola', 1.99, 'Refreshing and good for you!', categories[2])
+        itemCreate('Boca Bola', 1.99, 'Refreshing and good for you!', categories[2]),
+        itemCreate('T-shirt', 8.99, 'An essential of all wardrobes...', categories[1]),
     ]);
     console.log("Finish adding items");
 }
