@@ -8,3 +8,11 @@ exports.item_detail = asyncHandler(async (req, res, next) => {
         item,
     })
 })
+
+exports.item_form = asyncHandler(async (req, res, next) => {
+    const item = await Item.findById(req.params.id);
+    res.render('item_form', {
+        title: `Edit item: ${item.name}`,
+        item,
+    })
+})

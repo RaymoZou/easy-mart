@@ -5,7 +5,10 @@ block content
     div(class="container card-deck")
         for item in items
             div(class="card shadow-sm")
-                a(href=item.url class="card-header font-weight-bold") #{item.name}
+                //- a(href=item.url class="card-header stretched-link font-weight-bold") #{item.name}
+                a(href=item.url class="card-header")
+                    div=item.name
                 div(class="card-body")
                     p(class="card-text")=item.description
                     p $#{item.price}
+                    a(href=`${item.url}/update` class="btn btn-primary") Edit

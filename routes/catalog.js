@@ -12,4 +12,6 @@ router.get('/:id', category_controller.category_list);
 
 router.get('/item/:id', item_controller.item_detail);
 
+router.get('/item/:id/update', item_controller.item_form);
+
 module.exports = router;

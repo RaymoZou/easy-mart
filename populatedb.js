@@ -39,6 +39,7 @@ async function createItems() {
         itemCreate('Hat', 3.99, 'No cap', categories[1]),
         itemCreate('Boca Bola', 1.99, 'Refreshing and good for you!', categories[2]),
         itemCreate('T-shirt', 8.99, 'An essential of all wardrobes...', categories[1]),
+        itemCreate('Tennis shoes', 23.01, 'These are for tennis - obviously', categories[1]),
         itemCreate(`Rubik's Cube`, 10.99, 'People usually just peel the stickers off...', categories[3]),
         itemCreate('Granola Bar', 3.99, 'Now with 10g of protein!', categories[0]),
     ]);
