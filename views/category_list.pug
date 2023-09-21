@@ -1,8 +1,9 @@
 extends layout
 
 block content   
-    h1=title
-    p(class="font-bold") This is the categories page.
-    for category in category_list
-        li
-            a(href=category.url) #{category.name}
+    div(class="p-3")
+        h1=title
+        p This is the categories page.
+        for category in category_list
+            a(class="card" href=category.url)
+                div(class="card-header")=category.name
