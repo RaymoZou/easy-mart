@@ -4,4 +4,7 @@ block content
     div(class="p-3")
         h1=title
         p=item.description
-        div $#{item.price}
+        p=item.price
+        div.d-flex
+            a.btn.btn-primary(href=`${item.url}/update`) Edit
+            a.btn.btn-danger(href=`${item.url}/delete`) Delete

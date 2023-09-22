@@ -3,7 +3,15 @@ extends layout
 block content
     div(class="p-3")
         h3=title
-        p TODO: add form element for updating items
-        //- form
-        //-     div(class="form-group")
-        //-     label(for="name" value=item.name)
+        form(method='POST', action='')
+            div.form-group
+                label(for="name" value=item.name) Name:
+                input.form-control(type="text" name="name" value=item.name)
+            div.form-group
+                label(for="description" value=item.name) Description:
+                input.form-control(type="text" name="description" value=item.description)
+            div.form-group 
+                label(for="price" value=item.price) Price:
+                input.form-control(type="price" name="price" value=item.price)
+                input(type="hidden" value=item._id)
+            button.btn.btn-primary(type="submit") Submit
