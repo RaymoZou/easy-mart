@@ -1,15 +1,14 @@
 extends layout 
 
 block content
-    h1(class="m-3")=title
-    div(class="container card-deck row")
+    h1.m-3=title
+    div.container.card-deck.row
         for item in items
-            div(class="card shadow-sm")
-                //- a(href=item.url class="card-header stretched-link font-weight-bold") #{item.name}
-                a(href=item.url class="card-header")
+            div.card.shadow-sm
+                a.card-header(href=item.url)
                     div=item.name
-                div(class="card-body")
-                    p(class="card-text")=item.description
+                div.card-body
+                    p.card-text=item.description
                     p $#{item.price}
         //- div.card
         //-     button.btn.btn-primary Add new item
