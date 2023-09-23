@@ -34,3 +34,7 @@ exports.item_delete = asyncHandler(async (req, res, next) => {
     await Item.findByIdAndRemove(req.params.id);
     res.redirect('/category');
 })
+
+exports.item_create = asyncHandler(async (req, res, next) => {
+    res.send('creating item');
+})
