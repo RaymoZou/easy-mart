@@ -1,8 +1,8 @@
 extends layout 
 
 block content
-    h1.m-3=title
-    div.container.card-deck.row
+    h1.m-0.p-0=title
+    div.m-0.grid-container
         for item in items
             div.card.shadow-sm
                 a.card-header(href=item.url)
@@ -10,6 +10,6 @@ block content
                 div.card-body
                     p.card-text=item.description
                     p $#{item.price}
-        //- div.card
-        //-     button.btn.btn-primary Add new item
+        a.card(href=`/category/item/create`)
+            button.btn.btn-primary Add new item
 

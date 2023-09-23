@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h3=title
+    form(method='POST' action='')
+        div.form-group
+            label(for="name") Name:
+            input.form-control(type="text" name="name" required)
+        div.form-group
+            label(for="description") Description:
+            input.form-control(type="text" name="description" required)
+        div.form-group 
+            label(for="price") Price:
+            input.form-control(type="price" name="price" required)
+            input(type="hidden")
+        div.form-group
+            label(for="category") Category:
+            input.form-control(type="text" name="category")
+        //- div.form-group
+        //-     label(for="category") Category: 
+        //-     select(id="category").form-control
+        //-         for category in categories
+        //-             option(name="category" value=category.name)=category.name
+        button.btn.btn-primary(type="submit") Submit

@@ -10,6 +10,8 @@ router.get('/', category_controller.index);
 
 router.get('/:id', category_controller.category_list);
 
+router.get('/item/create', item_controller.item_create);
+
 router.get('/item/:id', item_controller.item_detail);
 
 router.get('/item/:id/update', item_controller.item_form);
@@ -18,5 +20,7 @@ router.get('/item/:id/delete', item_controller.item_delete);
 
 // POST categories
 router.post('/item/:id/update', item_controller.item_update_post);
+
+router.post('/item/create', item_controller.item_create_post);
 
 module.exports = router;

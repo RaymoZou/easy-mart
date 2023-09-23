@@ -18,6 +18,14 @@ exports.item_form = asyncHandler(async (req, res, next) => {
     })
 })
 
+exports.item_create = asyncHandler(async (req, res, next) => {
+    const categories = await Category.find({});
+    res.render('item_create', {
+        title: 'Add item',
+        categories: categories
+    })
+})
+
 exports.item_update_post = asyncHandler(async (req, res, next) => {
     const item = new Item({
         name: req.body.name,
@@ -30,11 +38,20 @@ exports.item_update_post = asyncHandler(async (req, res, next) => {
     res.redirect(updatedItem.url);
 })
 
+exports.item_create_post = asyncHandler(async (req, res, next) => {
+    const category = await Category.findOne({ name: req.body.category });
+    const item = new Item({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category
+    });
+
+    await item.save();
+    res.redirect(item.url)
+})
+
 exports.item_delete = asyncHandler(async (req, res, next) => {
     await Item.findByIdAndRemove(req.params.id);
     res.redirect('/category');
-})
-
-exports.item_create = asyncHandler(async (req, res, next) => {
-    res.send('creating item');
 })
