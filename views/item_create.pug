@@ -14,11 +14,8 @@ block content
             input.form-control(type="price" name="price" required)
             input(type="hidden")
         div.form-group
-            label(for="category") Category:
-            input.form-control(type="text" name="category")
-        //- div.form-group
-        //-     label(for="category") Category: 
-        //-     select(id="category").form-control
-        //-         for category in categories
-        //-             option(name="category" value=category.name)=category.name
+            label(for="category") Category: 
+            select(name="category").form-control
+                for category in categories
+                    option(name="category" value=category.name)=category.name
         button.btn.btn-primary(type="submit") Submit
