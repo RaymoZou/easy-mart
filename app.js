@@ -8,12 +8,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var categoryRouter = require('./routes/catalog');
-const mongoose = require('mongoose');
 
 var app = express();
-
-mongoose.connect(process.env.MONGODB_URI);
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

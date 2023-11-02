@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+mongoose.connect(process.env.MONGODB_URI, {
+    dbName: 'store_db'
+});
+
 const Schema = mongoose.Schema;
 
 const itemSchema = Schema({
@@ -13,5 +17,6 @@ itemSchema.virtual('url').get(function () {
     return `/category/item/${this._id}`
 })
 
+// collection name = 'Item' => 'items'
 const Item = mongoose.model('Item', itemSchema)
 module.exports = Item;
