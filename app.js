@@ -12,11 +12,7 @@ const mongoose = require('mongoose');
 
 var app = express();
 
-async function main() {
-  await mongoose.connect(process.env.MONGODB_URI);
-}
-
-main();
+mongoose.connect(process.env.MONGODB_URI);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,12 +27,13 @@ app.use('/users', usersRouter);
 app.use('/category', categoryRouter);
 
 app.use((req, res, next) => {
-  next(createError(404, `Uh oh, sorry we couldn't find that page for you`));
-})
+  const err = createError(404, `The requested resource was not found`);
+  next(err);
+});
 
 app.use((err, req, res, next) => {
-  res.status(err.status).send(err.message);
-})
+  res.status(err.status).render('error', { message: err.message, error: err })
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`listening on port ${process.env.PORT || 3000}`);
