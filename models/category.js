@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI, {
-    dbName: 'store_db'
+    dbName: 'storeDB'
 });
 
 const Schema = mongoose.Schema;
