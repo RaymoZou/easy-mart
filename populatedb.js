@@ -8,7 +8,10 @@ console.log("This script creates some categories to populate the database. Assum
 // set this to false if you wish to retain the current data in the database
 const IS_RESET = true;
 
-// mongoose.set("strictQuery", false); // Prepare for Mongoose 7
+// set mongoose connection properties
+mongoose.connect(process.env.MONGODB_URI, {
+    dbName: 'storeDB'
+});
 
 main().catch((err) => console.log(err));
 
