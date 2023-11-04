@@ -16,6 +16,14 @@ passport.deserializeUser(async (id, done) => {
     };
 });
 
+passport.isAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        res.redirect('/login');
+    }
+};
+
 passport.use(
     new LocalStrategy(async (username, password, done) => {
         try {
