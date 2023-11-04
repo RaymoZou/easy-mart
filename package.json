@@ -12,6 +12,8 @@
     "express-session": "^1.17.3",
     "mongodb": "^6.2.0",
     "mongoose": "^8.0.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {

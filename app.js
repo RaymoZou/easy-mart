@@ -9,13 +9,11 @@ var indexRouter = require('./routes/index');
 var categoryRouter = require('./routes/catalog');
 var session = require('express-session');
 const MongoStore = require('connect-mongo');
+const passport = require('./utils/passport');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
+// express-session
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -27,7 +25,15 @@ app.use(session({
   })
 }));
 
-app.use(logger('dev'));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+// app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
