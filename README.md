@@ -1,4 +1,4 @@
-# ScratchNote
+# Easymart
 An online convenience store mockup web server created using Express and MongoDB.
 
 ## Features
