@@ -1,12 +1,6 @@
 # ScratchNote
 An online convenience store mockup web server created using Express and MongoDB.
 
-## Usage
-To use ScratchNote begin by cloning the repository. Then, navigate 
-to the project folder via commmand line and type in "npm start" to enter
-the app in development mode. Open http://localhost:3000 to view it in the
-browser. 
-
 ## Features
 - User authentication with the passport.js local strategy
 - View, add and delete items in existing catalogue
